@@ -9,6 +9,7 @@ java -version
 ![bigdata](1.jpg)
 
 # key gen
+```
 ssh-keygen
 ls ~/.ssh/
 ssh-copy-id -i ~/.ssh/id_rsa.pub t4h2
@@ -19,7 +20,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub t4h5
 ssh t4h1
 ssh t4h3
 ssh t4h2
-
+```
 
 # jdk 설치 
 yum list java*jdk-devel
