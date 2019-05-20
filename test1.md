@@ -6,6 +6,8 @@ cat /etc/yum.repos.d/cloudera-manager.repo
 
 java -version
 
+![bigdata](1.jpg)
+
 # key gen
 ssh-keygen
 ls ~/.ssh/
