@@ -1,0 +1,176 @@
+[root@ip-172-31-46-141 schema]# history
+    1  echo never > sys/kernel/mm/transparent_hugepage/enabled
+    2  echo never > /sys/kernel/mm/transpararent_hugepage/enabled
+    3  echo never > /sys/kernel/mm/transparent_hugepage/enabled
+    4  cat /sys/kernel/mm/transparent_hugepage/enabled
+    5  exit
+    6  vi /etc/sysctl.conf
+    7  ls
+    8  cd /etc
+    9  ls
+   10  vi grub.conf
+   11  cd grub
+   12  cd ..
+   13  cd /boot
+   14  ls
+   15  cd grub
+   16  ls
+   17  vi menu.lst
+   18  cat /etc/hosts
+   19  getent /etc/hosts
+   20  getent hosts
+   21  clear
+   22  nslookup
+   23  clear
+   24  host 15.164.152.170
+   25  vi /etc/hosts
+   26  hostname
+   27  hostname t4h3
+   28  hostname
+   29  vi /etc/sysconfi/network
+   30  cd /etc/sysconfig
+   31  ls
+   32  vi network
+   33  getent hosts
+   34  yum install nscd
+   35  cd
+   36  service ntpd start
+   37  service nscd start
+   38  yum install ntp
+   39  service ntpd start
+   40  exit
+   41  /etc/ssh/
+   42  cd /etc
+   43  ls
+   44  cd ssh
+   45  ls
+   46  cd sshdconfig
+   47  ls
+   48  ls -al
+   49  vi ssh_config
+   50  ssh t4h2
+   51  vi ssh_config
+   52  ls
+   53  ls -al
+   54  chmod 775 ssh_config
+   55  ssh t4h2
+   56  clear
+   57  exit
+   58  cd /etc/ssh
+   59  ls
+   60  vi sshd_config
+   61  ssh thh1
+   62  ssh t4h1
+   63  service sshd restart
+   64  ssh t4h1
+   65  service ssh restart
+   66  vi sshd_config
+   67  ssh t4h1
+   68  vi sshd_config
+   69  service sshd restart
+   70  ssh t4h1
+   71  vi sshd_config
+   72  service sshd restart
+   73  ssh t4h1
+   74  password
+   75  passwd
+   76  ls
+   77  cd ..
+   78  ls
+   79  cd /
+   80  ls
+   81  cd
+   82  ls
+   83  ssh t4h1
+   84  cd sshd
+   85  cd /etc/sshd
+   86  ls
+   87  cd ..
+   88  cd ssh
+   89  ls
+   90  cd /etc/ssh
+   91  ls
+   92  vi sshd_config
+   93  passwd
+   94  ssh t4h1
+   95  ssh-keygen
+   96  ls ~/.ssh/
+   97  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h2
+   98  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h1
+   99  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h3
+  100  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h4
+  101  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h5
+  102  ssh t4h1
+  103  ssh t4h3
+  104  ssh t4h2
+  105  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h2
+  106  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h4
+  107  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h2
+  108  pdw
+  109  pwd
+  110  cd ~/.ssh/
+  111  ll
+  112  vi authorized_keys
+  113  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h2
+  114  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h4
+  115  ssh t4h4
+  116  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h5
+  117  exit
+  118  ssh t4h4
+  119  exit
+  120  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h5
+  121  ssh t4h5
+  122  ssh t4h4
+  123  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h4
+  124  ssh t4h4
+  125  ssh t4h1
+  126  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h1
+  127  ssh t4h1
+  128  ssh t4h4
+  129  ssh t4h5
+  130  ssh t4h4
+  131  ssh t4h1
+  132  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h2
+  133  ssh t4h2
+  134  ssh t4h1
+  135  ssh t4h2
+  136  ssh t4h4
+  137  ssh t4h5
+  138  key
+  139  ssh t4h5
+  140  ssh t4h4
+  141  ssh t4h2
+  142  ssh t4h1
+  143  ssh-copy-id -i ~/.ssh/id_rsa.pub t4h2
+  144  ssh t4h2
+  145  exit
+  146  cat /etc/host/conf
+  147  cat /etc/host.conf
+  148  grep . /etc/*.release
+  149  grep . /etc/*-release
+  150  yum list java*jdk-devel
+  151  yum install -y java-1.8.0-openjdk-devel.x86_64
+  152  yum install wget
+  153  wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz
+  154  ls
+  155  gzip -d mysql-connector-java-5.1.47.tar.gz
+  156  ls
+  157  tar xvf mysql-connector-java-5.1.47.tar
+  158  ls
+  159  ls
+  160  mkdir -p /usr/share/java/
+  161  cd mysql-connector-java-5.1.47
+  162  cp mysql-connector-java-5.1.47-bin.jar /usr/share/java/mysql-connector-java.jar
+  163  yum install cd /usr/share/java
+  164  cd \/usr/share/java
+  165  ls
+  166  yum install mysql-connector-java.jar
+  167  yum install mysql-connector-java
+  168  vi /etc/sysconfig/selinux
+  169  iptables -L
+  170  setstatus
+  171  setstatus
+  172  sestatus
+  173  init 6
+ 
+
