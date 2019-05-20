@@ -1,5 +1,5 @@
 
-#repository
+# repository
 sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo -P /etc/yum.repos.d/
 vi /etc/yum.repos.d/cloudera-manager.repo
 cat /etc/yum.repos.d/cloudera-manager.repo
