@@ -2,7 +2,7 @@
 bit.ly/2Hrvegs \
 github :star7357 \
 https://github.com/ep-code-box/bigdata_study/tree/master/total_excute
-https://github.com/kate0912/final_lab_2019
+https://github.com/kate0912/final_lab_2019/blob/master/20190521_%ED%86%B5%ED%95%A9%EC%8B%A4%EC%8A%B52%EC%9D%BC%EC%B0%A8.md
 
 # 각 IP 접속하기.
 ssh -i d:/skcc.pem centos@[퍼블릭_IP]
@@ -52,22 +52,55 @@ $sudo systemctl restart sshd.service
 
 # key gen
 ```
-ssh-keygen
-ls ~/.ssh/
-ssh-copy-id -i ~/.ssh/id_rsa.pub util01
+-- keygen 설정
+cd .ssh
+
+ssh-keygen -t rsa
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub mn1
 ssh-copy-id -i ~/.ssh/id_rsa.pub dn1
 ssh-copy-id -i ~/.ssh/id_rsa.pub dn2
 ssh-copy-id -i ~/.ssh/id_rsa.pub dn3
-ssh t4h1
-ssh t4h3
-ssh t4h2
+```
+# reboot a host
+```
+hostname -f
+sudo hostnamectl set-hostname util01.cdhcluster.com
+
+sudo hostnamectl set-hostname data03.cdhcluster.com
+hostname -f
+
+init 6
 ```
 
+# repository
+```
+-- Configure repository
+sudo yum install -y wget
+sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo \
+-P /etc/yum.repos.d/
+
+sudo vi /etc/yum.repos.d/cloudera-manager.repo
+>> baseurl=https://archive.cloudera.com/cm5/redhat/6/x86_64/cm/5.15.2/
+
+-- change the baseurl within cloudera-manager.repo to fit the version you want to install
+baseurl=https://archive.cloudera.com/cm5/redhat/6/x86_64/cm/5.7.4/
+for example: https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/5.14.4/
+
+sudo rpm --import \
+https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera
+java -version
+
+```
 
 # jdk 설치 
 ```
-yum list java*jdk-devel
-sudo yum install -y java-1.8.0-openjdk-devel.x86_64
+AS-IS: sudo yum install -y openjdk java-1.8.0-openjdk-devel.x86_64 
+
+TO-BE: sudo yum install oracle-j2sdk1.7
+
+java -version
+
 ```
 
 
@@ -85,29 +118,7 @@ $sudo cp mysql-connector-java-5.1.47-bin.jar /usr/share/java/mysql-connector-jav
 $cd  /usr/share/java
 $ sudo yum install mysql-connector-java
 ```
-# repository
-```
-$sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo -P /etc/yum.repos.d/
-$sudo vi /etc/yum.repos.d/cloudera-manager.repo
 
-==> base url 변경할지 여부 확인
-
-$ cat /etc/yum.repos.d/cloudera-manager.repo
-
-$ sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera
-
-java -version
-
-```
-# 방화벽해제
-```
-vi /etc/sysconfig/selinux
-SELINUX=enforcing => disabled
-init 6
-
-iptables -L
-sestatus
-```
 #클라우데라서버설치
 ```
 yum install cloudera-manager-daemons cloudera-manager-server
