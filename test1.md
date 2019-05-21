@@ -1,32 +1,52 @@
 
-bit.ly/2Hrvegs 
-github :star7357
+bit.ly/2Hrvegs \
+github :star7357 \
 https://github.com/ep-code-box/bigdata_study/tree/master/total_excute
 
-각 IP 접속하기.
+# 각 IP 접속하기.
+ssh -i d:/skcc.pem centos@[퍼블릭_IP]
 
-ssh -i ./skcc.pem centos@[퍼블릭_IP]
+ssh -i d:/skcc.pem centos@15.164.146.95
+ssh -i d:/skcc.pem centos@15.164.151.13
+ssh -i d:/skcc.pem centos@15.164.86.198
+ssh -i d:/skcc.pem centos@15.164.5.68
+ssh -i d:/skcc.pem centos@15.164.63.69
 
+# update yum
+```
+sudo yum update
+sudo yum install -y wget
+```
+#public 
+```
+15.164.146.95    master01.cdhcluster.com mn1
+15.164.151.13   util01.cdhcluster.com   util01
+15.164.86.198   data01.cdhcluster.com   dn1
+15.164.5.68     data02.cdhcluster.com   dn2
+15.164.63.69    data03.cdhcluster.com   dn3
+```
+# /etc/hosts 파일 수정 (priviate)
+```
+sudo -vi /etc/hosts 
 
-퍼블릭
+172.31.7.227    master01.cdhcluster.com mn1
+172.31.12.148   util01.cdhcluster.com   util01
+172.31.8.146   data01.cdhcluster.com   dn1
+172.31.10.234   data02.cdhcluster.com   dn2
+172.31.3.22     data03.cdhcluster.com   dn3
 
-프라빗
+```
 
+# passwd 수정
+sudo passwd centos
 
-15.164.140.128 172.31.39.235 
-15.164.146.139 172.31.46.208 
-15.164.149.231 172.31.46.141 
-15.164.152.170 172.31.42.115 
-15.164.24.103 172.31.46.235 
+# /etc/ssh/sshd_config 파일 수정
+```
+$sudo vi sshd_config
 
-
-
-# repository
-sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo -P /etc/yum.repos.d/
-vi /etc/yum.repos.d/cloudera-manager.repo
-cat /etc/yum.repos.d/cloudera-manager.repo
-
-java -version
+PasswordAuthentication yes
+$sudo systemctl restart sshd.service
+```
 
 # key gen
 ```
@@ -42,24 +62,36 @@ ssh t4h3
 ssh t4h2
 ```
 
+
 # jdk 설치 
+```
 yum list java*jdk-devel
-yum install -y java-1.8.0-openjdk-devel.x86_64
+sudo yum install -y java-1.8.0-openjdk-devel.x86_64
+```
 
+# repository
+```
+sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo -P /etc/yum.repos.d/
+vi /etc/yum.repos.d/cloudera-manager.repo
+cat /etc/yum.repos.d/cloudera-manager.repo
+
+java -version
+
+```
 # mysql-JDBC Connector 설치 
-
+```
 **configure repository 
 sudo yum install -y wget
 sudo wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz
 
 
-$ tar  mysql-connector-java-5.1.47.tar.gz
-mkdir -p /usr/share/java/
-cd mysql-connector-java-5.1.47
-cp mysql-connector-java-5.1.47-bin.jar /usr/share/java/mysql-connector-java.jar
-cd  /usr/share/java
-yum install mysql-connector-java
-
+$ tar -xvf  mysql-connector-java-5.1.47.tar.gz
+$sudo mkdir -p /usr/share/java/
+$cd mysql-connector-java-5.1.47
+$sudo cp mysql-connector-java-5.1.47-bin.jar /usr/share/java/mysql-connector-java.jar
+$cd  /usr/share/java
+$ sudo yum install mysql-connector-java
+```
 
 # 방화벽해제
 
