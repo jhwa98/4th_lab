@@ -1,12 +1,32 @@
 
+bit.ly/2Hrvegs 
+github :star7357
+https://github.com/ep-code-box/bigdata_study/tree/master/total_excute
+
+각 IP 접속하기.
+
+ssh -i ./skcc.pem centos@[퍼블릭_IP]
+
+
+퍼블릭
+
+프라빗
+
+
+15.164.140.128 172.31.39.235 
+15.164.146.139 172.31.46.208 
+15.164.149.231 172.31.46.141 
+15.164.152.170 172.31.42.115 
+15.164.24.103 172.31.46.235 
+
+
+
 # repository
 sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo -P /etc/yum.repos.d/
 vi /etc/yum.repos.d/cloudera-manager.repo
 cat /etc/yum.repos.d/cloudera-manager.repo
 
 java -version
-
-![bigdata](1.jpg)
 
 # key gen
 ```
